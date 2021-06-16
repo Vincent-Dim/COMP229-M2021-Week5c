@@ -6,7 +6,6 @@ import logger from 'morgan';
 import mongoose, { mongo } from 'mongoose';
 
 import indexRouter from '../Routes/index';
-import clothingRouter from '../Routes/index'; // all the stuff in clothing router file will be injected here
 
 // Express Web App Configuration
 const app = express();
@@ -38,10 +37,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../Client')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
-//Routing happens now
 app.use('/', indexRouter);
-app.use('/clothing-list', clothingRouter);  // defines new area of website called clothing-list. When the user inputs /clothing-list on the page, he is taken to clothingRouter
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) 

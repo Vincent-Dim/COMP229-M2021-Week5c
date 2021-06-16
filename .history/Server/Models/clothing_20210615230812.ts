@@ -9,6 +9,8 @@ const ClothingSchema = new Schema
     Colour: String,
     Size: String,
     Price: Number
+
+
 }, 
 {
     collection: "clothing"
